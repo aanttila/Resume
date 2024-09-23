@@ -1,0 +1,207 @@
+{
+  "demographics": {
+    "firstName": "Adrian",
+    "lastName": "Anttila",
+    "address": {
+      "city": "Johnson City",
+      "state": "TN",
+      "postalCode": "37615"
+    }
+  },
+  "summary": [
+    "Software architect with 25 years of experience in building scalable and maintainable applications.",
+    "My hands-on approach helps with balancing the product and technical concerns necessary for success with every aspect of development.",
+    "Over the last several years, I have deepened my knowledge and experience with microservices on a variety of cloud platforms."
+  ],
+  "languages": [
+    "C#",
+    "CSS",
+    "HTML",
+    "JavaScript",
+    "TypeScript",
+    "T-SQL",
+    "JSON",
+    "XML"
+  ],
+  "platforms": [
+    {
+      "name": "AWS",
+      "services": ["API Gateway", "CloudFormation", "CloudWatch", "DynamoDB", "Lambdas", "RDS", "SNS", "SQS"]
+    },
+    {
+      "name": "Google Cloud",
+      "services": ["BigQuery", "Google Healthcare (FHIR)"]
+    },
+    {
+      "name": "Microsoft Azure",
+      "services": ["Application Insights", "App Services", "Cosmos DB", "Functions", "KeyVault", "Redis", "Service Bus", "SQL", "Storage"]
+    }
+  ],
+  "technologies": [
+    "Angular",
+    "ASP.NET (MVC and Web API)",
+    "Dapper",
+    "Entity Framework",
+    "IIS",
+    ".NET Core",
+    "Node.js",
+    "NuGet",
+    "React",
+    "SQL Server",
+    "Tailwind CSS",
+    "Twitter Bootstrap",
+    "xUnit"
+  ],
+  "experience": [
+    {
+      "company": "Solera Health",
+      "title": "Principal Engineer",
+      "dates": "2022",
+      "location": "Johnson City, TN",
+      "duties": [
+        "Member of the Connect API team; primary driver of its architectural and technical overhaul, contributor for functional modifications, and various data adjustments and migrations"
+      ]
+    },
+    {
+      "company": "Paylocity",
+      "title": "Senior Engineer",
+      "dates": "2017 - 2022",
+      "location": "Nashville, TN",
+      "duties": [
+        "Part of the small team responsible for expanding and migrating the notifications implementation to Azure (and eventually AWS, as we pivoted on cloud providers company-wide)",
+        "Key contributor to one of Paylocity's first fully native AWS applications written in Node.js"
+      ]
+    },
+    {
+      "company": "MyHealthDirect",
+      "title": "Architect",
+      "dates": "2015 - 2017",
+      "location": "Nashville, TN",
+      "duties": [
+        "Collaborated with other technical leadership on the design and implementation of various feature enhancements and bug fixes for our applications and APIs",
+        "Assisted stakeholders in defining requirements while designing new features for a new application produced through a joint venture with one of MyHealthDirect's customers",
+        "Reviewed pull requests across projects and mentored other developers"
+      ]
+    },
+    {
+      "company": "Randa Solutions",
+      "title": "Architect",
+      "dates": "2014 - 2015",
+      "location": "Nashville, TN",
+      "duties": [
+        "Worked with other senior technical staff to design, prove, and execute a cloud-based CQRS architecture for application development",
+        "Developed and supported the core internal NuGet packages used across project teams",
+        "Initiator and point of contact for the Microsoft Enterprise Agreement and Azure ISV enrollment"
+      ]
+    },
+    {
+      "company": "Captain D's",
+      "title": "Ruby on Rails Developer",
+      "dates": "2013 - 2014",
+      "location": "Nashville, TN",
+      "duties": [
+        "Developed a responsive intranet site and its custom backing CMS for the franchise community",
+        "Redesigned the user interfaces for several sales reporting applications to improve user-friendliness and reduce help desk incidents"
+      ]
+    },
+    {
+      "company": "Servpro Industries",
+      "title": "UI Architect",
+      "dates": "2012 - 2013",
+      "location": "Nashville, TN",
+      "duties": [
+        "Designed the front-end architecture and associated technologies for all enterprise applications",
+        "Assisted with the back-end architecture for all applications within the enterprise",
+        "Tested performance across franchise-facing services",
+        "Stabilized the existing code base in preparation for the new architecture and technology stack"
+      ]
+    },
+    {
+      "company": "DaVita",
+      "title": "UI Architect",
+      "dates": "2012",
+      "location": "Nashville, TN",
+      "duties": [
+        "Defined best practices for CSS, semantic HTML, and the 960 Grid System",
+        "Initiated and contributed to the design and refactor of portions of the application architecture",
+        "Performed code reviews and participated in pair programming sessions with team members"
+      ]
+    },
+    {
+      "company": "Vertigo Software",
+      "title": "Senior Software Engineer",
+      "dates": "2006 - 2012",
+      "location": "Richmond, CA",
+      "duties": [
+        "Team lead for the Hewlett Packard MagCloud 3.0 iPad application",
+        "Senior developer on the globally distributed Hewlett Packard MagCloud web application team",
+        "Team lead for the PDC 09 and Channel 9 smooth streaming video players",
+        "Designed and constructed the majority of the Microsoft SPLA Essentials application",
+        "Responsible for the data architecture, installation experience, and Twitter integration for the CBS Presidential Inauguration player",
+        "Designed and implemented the data architecture for the Democratic National Committee Convention Experience",
+        "Lead developer for two of Microsoft's Windows Marketplace upgrades",
+        "Core contributor to Vertigo's website redesign",
+        "Designed and implemented a custom ASP.NET Membership provider for a commercial CRM"
+      ]
+    },
+    {
+      "company": "Deloitte Services LP",
+      "title": "Senior Developer",
+      "dates": "2006",
+      "location": "Nashville, TN",
+      "duties": [
+        "Lead programmer for the maintenance and feature development of a web-interface to SAP"
+      ]
+    },
+    {
+      "company": "HCA Healthcare",
+      "title": "Senior Application Engineer",
+      "dates": "2001 - 2006",
+      "location": "Nashville, TN",
+      "duties": [
+        "Technical lead for several financial and regulatory applications",
+        "Developed and presented technical guidance for internal use",
+        "Member of a research team evaluating Java and its methodologies",
+        "Participated in the maintenance and feature development of the system used to create and modify websites for all HCA facilities"
+      ]
+    },
+    {
+      "company": "Custom Data Solutions",
+      "title": "Software Consultant",
+      "dates": "2001",
+      "location": "Memphis, TN",
+      "duties": [
+        "Designed, implemented, and deployed an internal job application system for the local county government"
+      ]
+    },
+    {
+      "company": "Quilogy",
+      "title": "Consultant",
+      "dates": "1999 - 2001",
+      "location": "Memphis, TN",
+      "duties": [
+        "Technical lead for several consulting engagements",
+        "Taught several classes for the MCSD track",
+        "Developed coding standards and best practices documentation"
+      ]
+    },
+    {
+      "company": "Innovative Communications",
+      "title": "Project Engineer",
+      "dates": "1998 - 1999",
+      "location": "Memphis, TN",
+      "duties": [
+        "Responsible for the maintenance and future development of the company's touch-screen desktop application",
+        "Assisted with the creation of scheduling components for conferences and their user interface integration"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Virginia Western Community College",
+      "major": "Information Systems",
+      "dates": "1995 - 1997",
+      "location": "Roanoke, VA"
+    }
+  ]
+}

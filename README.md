@@ -1,6 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Introduction
 
-## Getting Started
+This is an application designed to illustrate basic Next.js, React, Tailwind, and TypeScript usage through a resume application.
+
+## TODO
+[X] Create the skeleton
+[X] Choose the styling
+[X] Convert my resume to a hard-coded set of elements
+[X] Migrate each section into its own component
+[X] Convert the hard-coded content to JSON and update each component to be dynamic
+[ ] Create a resume-template.json file
+[ ] Push to GitHub
+[ ] Add deployments to Vercel
+[ ] Add caching to ResumeService? This may not be necessary for prod builds
+[ ] Add highlights to experience
+[ ] Convert from a JSON file to a Postgres database?
+[ ] Pick some "better" fonts?
+[ ] Add a contact options, including demographics updates
 
 First, run the development server:
 
@@ -16,18 +31,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 

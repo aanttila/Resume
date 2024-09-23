@@ -1,0 +1,45 @@
+{
+  "demographics": {
+    "firstName": "First",
+    "lastName": "Last",
+    "address": {
+      "city": "City",
+      "state": "State",
+      "postalCode": "12345"
+    }
+  },
+  "summary": [
+    "TODO: Summary"
+  ],
+  "languages": [
+    "TODO: Languages"
+  ],
+  "platforms": [
+    {
+      "name": "TODO: Platform",
+      "services": ["TODO: Services"]
+    }
+  ],
+  "technologies": [
+    "TODO: Technologies"
+  ],
+  "experience": [
+    {
+      "company": "Company",
+      "title": "Title",
+      "dates": "2024",
+      "location": "City, State",
+      "duties": [
+        "TODO: Duties"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "TODO: School",
+      "major": "TODO: Major",
+      "dates": "2024",
+      "location": "City, State"
+    }
+  ]
+}
