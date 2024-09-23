@@ -8,13 +8,13 @@ This is an application designed to illustrate basic Next.js, React, Tailwind, an
 [X] Convert my resume to a hard-coded set of elements  
 [X] Migrate each section into its own component  
 [X] Convert the hard-coded content to JSON and update each component to be dynamic  
-[ ] Create a resume-template.json file  
-[ ] Push to GitHub  
+[X] Create a resume-template.json file  
+[X] Push to GitHub  
 [ ] Add deployments to Vercel  
 [ ] Add caching to ResumeService? This may not be necessary for prod builds  
-[ ] Add highlights to experience  
+[ ] Add "more information" to experience  
 [ ] Convert from a JSON file to a Postgres database?  
-[ ] Pick some "better" fonts?  
+[ ] Pick different fonts?  
 [ ] Add a contact options, including demographics updates  
 
 First, run the development server:
