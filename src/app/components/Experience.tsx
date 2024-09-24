@@ -11,10 +11,11 @@ export default function Experience() {
         {experience.map((e, index) =>
           <div key={index} className="mt-4">
             <div className="grid grid-cols-4 md:font-semibold md:space-x-2">
-              <div className="col-span-4 font-semibold md:col-span-1">{e.company}</div>
-              <div className="col-span-2 md:col-span-1">{e.title}</div>
-              <div>{e.dates}</div>
-              <div>{e.location}</div>
+              <div className="col-span-3 md:col-span-1 font-semibold">{e.company}</div>
+              <div className="text-right md:hidden">{e.dates}</div>
+              <div className="col-span-3 md:col-span-1">{e.title}</div>
+              <div className="hidden md:block">{e.dates}</div>
+              <div className="text-right md:text-left">{e.location}</div>
             </div>
 
             <ul className="list-disc pl-5">
