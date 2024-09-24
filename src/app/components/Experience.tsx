@@ -10,9 +10,17 @@ export default function Experience() {
 
         {experience.map((e, index) =>
           <div key={index} className="mt-4 first-of-type:mt-0">
-            <div className="font-semibold">{e.company}</div>
-            <div>{e.title}</div>
-            <div className="font-extralight text-xs">{e.dates} &nbsp; {e.location}</div>
+            <div className="lg:grid lg:grid-cols-4 lg:gap-2 lg:font-semibold">
+              <div className="font-semibold">{e.company}</div>
+              <div>{e.title}</div>
+              <div className="font-extralight lg:font-semibold text-xs lg:text-base">
+                {e.dates}
+                {e.location &&
+                  <span className="lg:hidden">&nbsp; {e.location}</span>
+                }
+              </div>
+              <div className="hidden lg:block">{e.location}</div>
+            </div>
 
             {e.duties.length > 0 &&
               <ul className="list-disc pl-5">
