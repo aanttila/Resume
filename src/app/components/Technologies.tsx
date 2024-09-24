@@ -5,7 +5,7 @@ export default function Technologies() {
 
   if (technologies.length > 0) {
     return (
-      <div className="space-y-2">
+      <div className="mt-2">
         <h2 className="font-bold text-xl text-sky-300">Technologies</h2>
 
         <div>
