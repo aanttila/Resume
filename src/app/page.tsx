@@ -8,7 +8,7 @@ import Technologies from "./components/Technologies";
 
 export default function Home() {
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] mx-16 my-8">
+    <div className="font-[family-name:var(--font-geist-sans)] mx-4 md:mx-16 my-4 md:my-8">
       <main className="space-y-8">
         <div>
           <Demographics />
@@ -25,6 +25,7 @@ export default function Home() {
       
       <footer className="text-xs text-slate-400">
         Made with Next.js, React, Tailwind CSS, and TypeScript.
+        Hosted on <a href="https://www.vercel.com" target="_blank" className="underline">Vercel</a>.
       </footer>
     </div>
   );

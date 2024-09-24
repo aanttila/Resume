@@ -10,7 +10,7 @@ This is an application designed to illustrate basic Next.js, React, Tailwind, an
 [X] Convert the hard-coded content to JSON and update each component to be dynamic  
 [X] Create a resume-template.json file  
 [X] Push to GitHub  
-[ ] Add deployments to Vercel  
+[X] Add deployments to Vercel  
 [ ] Add caching to ResumeService? This may not be necessary for prod builds  
 [ ] Add "more information" to experience  
 [ ] Convert from a JSON file to a Postgres database?  
