@@ -1,4 +1,6 @@
+import Link from "next/link";
 import ResumeService from "../services/ResumeService"
+import CompanyService from "../services/CompanyService";
 
 export default function Experience() {
   const experience = ResumeService.getExperience();
@@ -27,6 +29,10 @@ export default function Experience() {
                 {e.duties.map((d, index) =>
                   <li key={index}>{d}</li>
                 )}
+
+                {CompanyService.hasCompany(e.company) && 
+                  <li><Link href={`/companies/${encodeURIComponent(e.company)}`}>See More</Link></li>
+                }
               </ul>
             }
           </div>

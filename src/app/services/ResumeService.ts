@@ -1,8 +1,7 @@
 import fs from "fs";
 import path from "path";
 import resumeTemplate from "../data/resume-template.json";
-import { IDemographics, IExperience, IPlatform, IResume } from "../models/resume";
-import { IEducation } from "../models/resume/IEducation";
+import { IDemographics, IEducation, IExperience, IPlatform, IResume } from "../models/resume";
 
 export default abstract class ResumeService {
   private static readonly resume = this.getResume();

@@ -1,0 +1,382 @@
+{
+  "companies": [
+    {
+      "name": "Solera Health",
+      "projects": [
+        {
+          "name": "Connect",
+          "technologies": ["Node.js", "MongoDB"],
+          "platforms": [
+            { "name": "Microsoft Azure", "services": ["Application Insights", "Functions", "Service Bus"] },
+            { "name": "Google Cloud", "services": ["BigQuery", "Google Healthcare (FHIR)"] }
+          ],
+          "summary": [
+            "Connect is Solera's patient program participation software.",
+            "It includes qualification based on vendor contracts, enrollment, and activity tracking integrated with providers and partners.",
+            "There are separate teams for UI, API, and Reporting."
+          ],
+          "technicalOverview": [
+            "The Connect API is written in TypeScript and Node.js, with services handling requests external and internal consumers, including Solera's UI written in React.",
+            "Services are exposed through HTTPS API endpoints.",
+            "Due to the time savings and rich features of Google Healthcare's FHIR APIs and data stores, our source of truth is Google Cloud&apso;s FHIR Healthcare repository, which is replicated to BigQuery for reporting and advanced querying."
+          ],
+          "otherInformation": [
+            "I am currently co-leading an effort to update our architecture and technologies.",
+            "While hosting in two different cloud providers is undesirable, the performance impact is nearly imperceptible, making any effort to consolidate cost-prohibitive at this time.",
+            "We are re-organizing our monolithic API, integration tests, and Azure Functions (timer and message triggers) into a set of “domain services”.",
+            "Each domain service is independently deployable and scalable, with improved cohesion, abstraction, modularity, and integration/unit testing.",
+            "We are also taking the opportunity to increase the use of TypeScript&apso;s strengths, isolate and unify data access, introduce exponential retries, and shift from Express to Azure HTTP Functions."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paylocity",
+      "projects": [
+        {
+          "name": "WebPay, Notifications",
+          "technologies": ["ASP.NET Web API", "Ninject", "React", "xUnit"],
+          "platforms": [
+            { "name": "AWS", "services": ["API Gateway", "CloudFormation", "CloudWatch", "DynamoDB", "Lambda", "RDS", "SNS", "SQS"] },
+            { "name": "Microsoft Azure", "services": ["Application Insights", "Cosmos DB", "Functions", "KeyVault", "Service Bus", "SQL", "Storage (Table and Blob)"] }
+          ],
+          "summary": [
+            "WebPay is a payroll and human capital management application, with active development from several different and independent teams.",
+            "The web and mobile clients use a combination of custom and shared APIs, depending on the feature and user interface.",
+            "An initiative is currently underway to segregate the underlying database for performance and scalability reasons.",
+            "My team, API Services, is helped with this effort by re-implementing the Notifications functionality in Azure while coordinating with other teams to share lessons learned, build project templates, create NuGet packages for common functionality, and document what we built and why.",
+            "After a few years in production, Paylocity has decided to deprecate Azure in favor of AWS, and my team is currently migrating all of our Azure artifacts to AWS."
+          ],
+          "technicalOverview": [
+            "WebPay is an ASP.NET MVC and Angular application that can host other modules within itself.",
+            "Existing services are implemented in WCF, with a variety of technologies (Dapper, EF, ADO.NET, stored procedures) used to access SQL Server.",
+            "The Notifications services are Azure Function Apps, triggered via HTTP and Azure Service Bus messages, configured with app settings and KeyVault (for sensitive information), reading and writing data to Azure Blob Storage, Azure Cosmos DB, and Azure SQL Database.",
+            "The Email functions interact with Mailgun, a third-party email provider that supports encryption at rest and during transfer, which is important since our notifications include PII."
+          ],
+          "otherInformation": [
+            "Initially, our implementation was built on Azure Cloud Services, but we migrated to Azure Functions because Cloud Services was recently deprecated.",
+            "While we engaged with Microsoft and a consulting firm with cloud experience, we found it faster to research technologies and architectures ourselves.",
+            "One of the more challenging technical issues we've had to address is idempotency, because Azure Functions frequently shut down in an ungraceful manner and message-based triggers can (and do) replay the same message more than once.",
+            "Azure Cosmos DB is only currently used in a single service, but we had plans to migrate some of our Azure SQL data over for cost, maintenance, and performance reasons now that we better understand how the data is used.",
+            "I've been involved in every technical decision regarding the migration to Azure and have been responsible for the implementation of several of the new services.",
+            "Finally, I assisted several teams during their migration to our new cloud-based message bus implementation."
+          ]
+        },
+        {
+          "name": "ToDos",
+          "technologies": ["Node.js", "Mocha+Chai"],
+          "platforms": [
+            { "name": "AWS", "services": ["API Gateway", "CloudFormation", "CloudWatch", "DynamoDB", "Lambda", "RDS", "SNS", "SQS"] }
+          ],
+          "summary": [
+            "Tracks tasks associated with operations across systems in the organization, from start to completion or cancellation.",
+            "Several business rules around expiration and visibility are enforced.",
+            "Batching functionality was a fast-follow feature after our initial release, which improved performance."
+          ],
+          "technicalOverview": [
+            "ToDos is interfaced through the API Gateway, which performs JWT authentication and message queueing for asynchronous processing.",
+            "Messages are processed via Node.js Lambdas and data is written to Dynamo DB, which is in turn replicated to RDS for analytics reporting."
+          ],
+          "otherInformation": [
+            "ToDos has performed very well, especially given that we are using the consumption-based billing model, which has helped keep our costs down (nights and weekends see little traffic, so we're not paying to keep our services up during those times if they aren't needed)."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MyHealthDirect",
+      "projects": [
+        {
+          "name": "ConsumerDirect, ReferralDirect",
+          "technologies": ["Angular.js", "ASP.NET MVC 5", "jQuery", "Knockout.js", "NHibernate", "Spring.NET", "Twitter Bootstrap", "XUnit"],
+          "platforms": [
+            { "name": "Microsoft Azure", "services": ["Redis Cache, Service Bus, SQL Database, Table Storage, VMs"] }
+          ],
+          "summary": [
+            "ReferralDirect is an application used to schedule appointments on behalf of patients; ConsumerDirect is an application that allows patients to schedule appointments for themselves.",
+            "Both applications use a common set of API services that integrate with third-party systems to sync calendar and appointment data, if available."
+          ],
+          "technicalOverview": [
+            "ReferralDirect was built using Knockout with custom CSS, while ConsumerDirect was built with Angular combined with Bootstrap.",
+            "Services are implemented in WCF, with a non-standard security model and use Spring.NET for injection and transaction management (via AOP).",
+            "Repositories use fluent NHibernate."
+          ],
+          "otherInformation": [
+            "I have had the opportunity to introduce new technologies, new frameworks, new features, and new applications at several \"lunch & learns\" open to the entire company.",
+            "I also enjoy being involved in every developer and QA interview."
+          ]
+        },
+        {
+          "name": "Aggregator",
+          "technologies": ["ASP.NET MVC 5", "Azure SQL Database", "Entity Framework", "jQuery", "Twitter Bootstrap", "XUnit"],
+          "platforms": [],
+          "summary": [
+            "The Aggregator provides a set of interfaces that allow front-end consumers to issue availability queries against one or more scheduling vendors and combine the results into a single result set, with the intention of allowing a user to book an appointment through the Aggregator.",
+            "The Resource Registry, an application that acts maintains a master list for all resources (physicians, clinics, equipment, etc) participating in the Aggregator ecosystem, was also developed;",
+            "this allows front-end consumers to cache a copy of all resources with the intention of browsing/filtering resources before querying for their availability.",
+            "Both the Resource Registry and the Aggregator support custom workflows, so that appointments for specific resources can be booked through their scheduling vendor's custom user experience instead of the front-end consumer."
+          ],
+          "technicalOverview": [
+            "The Aggregator and Resource Registry are Web API applications, using HMAC for security.",
+            "Scheduling Vendor availability queries are issued asynchronously to all active scheduling vendors and results are combined using a correlation key;",
+            "any queries taking longer than a configured threshold are ignored, and results are randomized to prevent one scheduling vendor from being favored over another (this is a concern since MyHealthDirect is a scheduling vendor in the Aggregator ecosystem while also building and maintain the Aggregator itself).",
+            "The Aggregator, Resource Registry, and Scheduling Vendor APIs are documented in Swagger and Word and are covered by a suite of Postman tests that we share with each partner."
+          ],
+          "otherInformation": [
+            "The aggregator was a joint venture between MyHealthDirect and one of its customers.",
+            "I was primarily responsible for requirements solicitation and negotiation, architecture, and oversight (technical and UX guidance, mentoring, reviewing pull requests, etc.) of the senior developers on the project."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Randa Solutions",
+      "projects": [
+        {
+          "name": "EDMS Licensure",
+          "technologies": ["ASP.NET MVC 5", "Dapper", "Entity Framework", "jQuery", "Kendo UI", "Knockout.js", "MSTest", "NServiceBus", "Twitter Bootstrap"],
+          "platforms": [
+            { "name": "Microsoft Azure", "services": ["Cloud Services", "Queue Storage (for the service bus)", "Redis Cache", "Service Bus", "SQL Database", "Table Storage"] }
+          ],
+          "summary": [
+            "EDMS Licensure is an application designed to manage educator licenses for the Tennessee Department of Education (TDOE).",
+            "Changes to educators are tracked and reviewed by state-employed licensing specialists to ensure all requirements are met before being approved.",
+            "Contractual requirements included hosting the application in Microsoft's Azure cloud infrastructure, which was something I was personally excited to work with."
+          ],
+          "technicalOverview": [
+            "The application's user interface is a responsive website using Knockout.js and Kendo UI controls to render data returned from either our OData endpoints or the SignalR backplane.",
+            "The overall application architecture was modeled after the Command Query Responsibility Segregation pattern (CQRS).",
+            "WebAPI endpoints communicated with our Azure Cloud Services over the Azure Service Bus by sending commands with NServiceBus.",
+            "Command handlers would instantiate our domain models, translate commands into method calls, and save any changes to Azure Table Storage using Event Sourcing.",
+            "Domain model changes were published as events on the bus, and special \"replication\" handlers were responsible for copying data into SQL Server schema optimized for reads and queried through the previously mentioned OData endpoints.",
+            "Domain events or events raised by the replication handlers were sometimes used to communicate to client browsers when data was changed and needed to be refreshed."
+          ],
+          "otherInformation": [
+            "Implementing a new architecture (CQRS) on a new platform (Azure) was a lot of fun, and I was able to become an integral part of the infrastructure and architectural design.",
+            "Due to the inherently asynchronous nature of CQRS, we were forced to address traditional problems in new and interesting ways."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Captain D's",
+      "projects": [
+        {
+          "name": "Captain D's Intranet, CMS, and Account Directory",
+          "technologies": ["CoffeeScript", "Cucumber", "jQuery", "Liquid Templates", "Minitest", "PostgreSQL", "Ruby", "Rails", "Slim", "SASS & LESS", "Twitter Bootstrap"],
+          "platforms": [],
+          "summary": [
+            "The CMS is an administrative application that allows corporate staff to manage content surfaced on the company's intranet for corporate and franchise users.",
+            "The intranet application was built to allow for the custom display of CMS content through user-defined templates, allowing the site's structure to be altered significantly without involving engineering resources.",
+            "Corporate and franchise users and groups were managed through the Account Directory application and their authorization was provided through audience membership defined in the CMS;",
+            "the expectation for the Account Directory is that it will eventually provide security information for all enterprise applications.",
+            "It was imperative that the applications we were responsible for building supported mobile devices, as the majority of non-corporate users do not own or use PCs."
+          ],
+          "technicalOverview": [
+            "Both the CMS and Intranet sites were built with Ruby 2 on Rails 4, with PostgreSQL 9.x database storage.",
+            "Authentication and authorization against Active Directory and non-AD users for both sites are provided through the Devise CAS gem.",
+            "The intranet sites use custom routes to enable friendly URLs, based on slugs generated by FriendlyId.",
+            "CMS data is rendered with custom Liquid templates.",
+            "All navigation links are routed through a special controller for click tracking.",
+            "Twitter Bootstrap and the Slim templating engine are used to author views, Simple Form is used to author HTML forms, and both SASS and LESS are used to author CSS style definitions.",
+            "Unit tests use the Minitest framework while behavior-driven tests use Cucumber.",
+            "Code Climate is integrated into our automated Jenkins builds to help keep the quality of our code high."
+          ],
+          "otherInformation": [
+            "I was given this opportunity despite my lack of professional Rails experience and was able to quickly transition into a productive contributor role."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Servpro Industries",
+      "projects": [
+        {
+          "name": "Franchise Work Center, Evergreen Services",
+          "technologies": ["ASP.NET MVC 4.0", "C#", "Entity Framework", "jQuery", "Razor View Engine", "SQL Server 2008 R2", "WCF", "WPF"],
+          "platforms": [],
+          "summary": [
+            "Franchise Work Center is a desktop application used by Servpro's franchises to manage fire and water damage restoration jobs.",
+            "The Evergreen Services expose business logic and persistence for all franchise-based applications.",
+            "Servpro is currently in the early stages of architecting and rewriting each thick client application as a thin client, with its own set of dedicated and isolated services."
+          ],
+          "technicalOverview": [
+            "The current desktop-based Franchise Work Center client is written in WPF and interfaces with the WCF-based Evergreen Services, which in turn interfaces with SQL Server through Entity Framework.",
+            "When I joined the team, performance tuning was underway, and I was tasked with using SoapUI and LoadUI to confirm the performance and scalability improvements.",
+            "Shortly thereafter, I was part of the effort to stabilize the code base and add missing critical features so that the franchises would have the functionality they needed to manage their jobs while new applications and the web-based version of the application were written.",
+            "In anticipation of the rewrite, I have determined the architecture and technologies (ASP.NET 4.5, MVC 4, jQuery, Knockout.js) we will be using on the front end while assisting with the back-end architecture.",
+            "I was also the team lead for a new dashboard application built on ASP.NET MVC that provides operational information for franchises, including critical status information for on-site restoration jobs."
+          ],
+          "otherInformation": [
+            "Within a few months of coming on board, I became heavily involved in the interview process and was able to update our phone screen and interview questions (both technical and soft skills).",
+            "Additionally, I initiated technical brown bag lunches to enable technical learning and information sharing across teams."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DaVita",
+      "projects": [
+        {
+          "name": "Falcon 2.0",
+          "technologies": ["ASP.NET MVC 3.0", "C#", "Entity Framework", "jQuery", "MS Test", "Razor View Engine", "SQL Server 2008"],
+          "platforms": [],
+          "summary": [
+            "Falcon 2.0 is the consolidation of several desktop and web applications relating to patient dialysis care into a unified web experience."
+          ],
+          "technicalOverview": [
+            "Falcon 2.0 is developed through the combined efforts of distributed DaVita employees, contractors, and external on-shore and off-shore software development firms.",
+            "Initially, I was brought in as one of the UI architects, providing guidance through documentation and assistance with every aspect of the frontend development, while also providing reusable components and design elements (stylesheets and graphics) for the entire team.",
+            "Within a few months, my role was expanded to middle-tier and database development and architectural consultation.",
+            "The Falcon 2.0 frontend was being developed with ASP.NET MVC 3.0 and the Razor View Engine, jQuery, Knockout.js, and KendoUI.",
+            "The target browsers were IE8 and FireFox.",
+            "The middle tier was exposed through WCF while accessing the SQL Server database through the Entity Framework (queries are a mixture of LINQ-to-Entities and stored procedures)."
+          ],
+          "otherInformation": [
+            "Within my first three months on the project team, I was the first person to receive the Sprint MVP award."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vertigo Software",
+      "projects": [
+        {
+          "name": "MagCloud.com (Hewlett Packard intellectual property)",
+          "technologies": ["ASP.NET MVC 3.0", "C#", "jQuery", "Moq", "NUnit", "Razor View Engine", "SQL Server 2008"],
+          "platforms": [],
+          "summary": [
+            "MagCloud provides publishing services for individuals or entities that don't have access to their own printing press.",
+            "Publishers can upload PDFs or arrange images from Flickr photostreams to publish.",
+            "When a customer makes a purchase, the publication is printed on-demand and shipped to the specified address."
+          ],
+          "technicalOverview": [
+            "MagCloud's team is comprised of several different companies operating around the world.",
+            "I was on the frontend team, which was responsible for working with the business and design team to understand the requirements, determine and supply the technical requirements to the platform team (web services and database), and implement the features within the web application.",
+            "The interface was written entirely in ASP.NET MVC 2.0 (and migrated to 3.0 within a month of its release), making heavy use of jQuery and CSS, and targets IE7, IE8, Safari, Chrome, FireFox, and Opera on both Windows and Mac.",
+            "We've been using the DataAnnotations support from the WCF RIA Services binaries to implement input validation, which provided a fairly smooth transition to .NET 4.0 and MVC 2.0, once they were released.",
+            "I was also the lead developer on the rewrite of the iPad application that allows users to download and view their previously purchased publications and/or the free content available within the app.",
+            "My involvement included application and data architecture, Objective-C coding, using Interface Builder to create the core user experience, and provide feedback and guidance to our design resources."
+          ],
+          "otherInformation": [
+            "I joined the project team about two years after development started in earnest.",
+            "In-between feature work, I've been responsible for refactoring several core components and their dependencies to enable a more loosely coupled architecture, which has enabled better unit testing and more code coverage."
+          ]
+        },
+        {
+          "name": "PDC 09, CBS Presidential Inauguration, and Democratic National Committee Convention players",
+          "technologies": ["JSON & XML, Silverlight"],
+          "platforms": [],
+          "summary": [
+            "Each of the listed players provided an HD video experience coupled with the presentation of different data sources (Twitter, blogs, news, scheduling, etc.) that were aggregated and displayed in the player."
+          ],
+          "technicalOverview": [
+            "The players were written in Silverlight.",
+            "The DNCC player incorporated an external ActiveX control to provide the smooth streaming functionality that wasn't available until Silverlight 3.",
+            "Due to the large target audiences and bandwidth requirements for streaming HD video, content delivery networks (CDNs) were leveraged to prevent the origin servers from being overwhelmed.",
+            "I also developed Windows Services to centralize third-party data access and reduce network traffic, such as the Move Networks CMS for the DNCC project."
+          ],
+          "otherInformation": [
+            "I included the video players here because of the CDN and data access work.",
+            "I thought it might be nice to know that I've worked with the CDN providers Akamai and Level 3, and the data access functionality I developed has been used in every video project Vertigo has implemented, including March Madness, NFL Sunday Night Football, and the 2010 Winter Olympics;",
+            "it also ships with the open source Silverlight Media Framework that Microsoft supports and provides on CodePlex."
+          ]
+        },
+        {
+          "name": "SPLA Essentials",
+          "technologies": ["ASP.NET MVC, jQuery, SQL Server 2008"],
+          "platforms": [],
+          "summary": [
+            "SPLA Essentials is a web application written for Microsoft that provides software licensing management for individuals or small companies that either interface directly with Microsoft or through third-party resellers."
+          ],
+          "technicalOverview": [
+            "The website began using ASP.NET MVC several months before version 1.0 was released, and upgraded after it was made available.",
+            "Custom jQuery script was used for client-side validation and state transitions were appropriate.",
+            "Several different Microsoft databases were used in conjunction with the application's own custom database to provide all the necessary storage and integration.",
+            "Initial localization support was included for 7 locales and implemented through a combination of custom database support (schema and T-SQL functions) as well as .NET resources."
+          ],
+          "otherInformation": [
+            "I helped mentor one of our junior developers on the project through many pair programming sessions."
+          ]
+        },
+        {
+          "name": "Windows Marketplace",
+          "technologies": ["ASP.NET, JavaScript, SQL Server 2005/2008"],
+          "platforms": [],
+          "summary": [
+            "Before being turned into the Microsoft Store, the Windows Marketplace was Microsoft's global storefront on the web.",
+            "Both Microsoft and third-party products were available for purchase and in some cases (Office 2007 and Windows Vista, for example) were available for digital download.",
+            "Links to the Windows Marketplace were included in the Windows Vista start page."
+          ],
+          "technicalOverview": [
+            "The website and its management tools were written in ASP.NET and JavaScript and interfaced several with SQL Server databases."
+          ],
+          "otherInformation": [
+            "I was originally brought on as a senior developer after several years of completed development and was eventually promoted to project team lead.",
+            "Part of the feature work I was responsible for designing and implementing involved a complete refactoring of the core rendering pipeline to allow for custom content to be rendered based on several different factors (query string parameters, referring sites, cookies, etc.) without negatively impacting performance or functionality.",
+            "Internally, Vertigo adopted SCRUM while operating within Microsoft's waterfall management style externally."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HCA Healthcare",
+      "projects": [
+        {
+          "name": "Internal Regulatory Application",
+          "technologies": ["ASP.NET, JavaScript, SQL Server 2000"],
+          "platforms": [],
+          "summary": ["Software system that tracked physician committee membership and associated gifts granted for service."],
+          "technicalOverview": ["The website was written in ASP.NET and JavaScript, with domain classes and services written in C#, interfacing with SQL Server 2000 through stored procedures."],
+          "otherInformation": ["I served as the technical lead in a very political and process driven environment."]
+        },
+        {
+          "name": "Internal Financial Application",
+          "technologies": ["ASP.NET, JavaScript, SQL Server 2000"],
+          "platforms": [],
+          "summary": ["Software system designed to record and report on financial data."],
+          "technicalOverview": ["The website was written in ASP.NET and JavaScript, with domain classes and services written in C#, interfacing with SQL Server 2000 through stored procedures."],
+          "otherInformation": ["I served as the technical lead in a very political and process driven environment."]
+        },
+        {
+          "name": "Several Internal Financial and Regulatory Applications",
+          "technologies": ["ASP 3.0, JavaScript, SQL Server 2000, VB6"],
+          "platforms": [],
+          "summary": ["Inherited the responsibility for several financial and regulatory applications."],
+          "technicalOverview": [
+            "Each website was written in ASP 3.0 and JavaScript, with domain classes and COM+ middle-tier components written in VB6, interfacing with SQL Server 2000 through stored procedures.",
+            "XmlHttp was used heavily for richer user experiences."
+          ],
+          "otherInformation": []
+        },
+        {
+          "name": "Internal Resource Tracking Application",
+          "technologies": ["EJB", "Java", "JBoss", "JSP", "Maverick", "SQL Server 2000", "XML/XSLT"],
+          "platforms": [],
+          "summary": ["Software system designed to track technical resources within the enterprise."],
+          "technicalOverview": ["The website was written in JSP/XML/XSLT, domain classes written in Java, and services written as EJBs, interfacing with SQL Server 2000."],
+          "otherInformation": [
+            "This was primarily a research project to evaluate Java as a viable alternative to Microsoft technologies.",
+            "While political factors ultimately prevented a shift towards Java, patterns like Inversion-of-Control, Continuous Integration, Data Transfer Objects, Model-View-Controller, and Repositories were learned."
+          ]
+        },
+        {
+          "name": "Internal Best Practices Application (Streetwise)",
+          "technologies": ["ASP 3.0", "SQL Server 2000", "VB6", "XML/XSLT"],
+          "platforms": [],
+          "summary": ["Enterprise-wide best-practices idea sharing intranet application."],
+          "technicalOverview": ["The frontend was written in ASP 3.0 (making very heavy use of XML and XSLT) and JavaScript, with domain classes and COM+ middle-tier components written in VB6, interfacing with SQL Server 2000 through stored procedures (select operations used FOR XML)."],
+          "otherInformation": ["This application was a rewrite of a departmental application that was saving the company hundreds of thousands of dollars a year, with the intention of expanding those cost savings to the entire company."]
+        },
+        {
+          "name": "Internal Lab Work Application for Physicians",
+          "technologies": ["ASP 3.0, VB6, XML/XSLT"],
+          "platforms": [],
+          "summary": ["Web application that allowed doctors to review and digitally sign lab work and other patient information."],
+          "technicalOverview": ["The frontend was written in ASP 3.0 (making very heavy use of XML and XSLT) and JavaScript (with XmlHttp), with domain classes and COM+ middle-tier components written in VB6, interfacing with a third-party data source (Meditech)."],
+          "otherInformation": []
+        }
+      ]
+    }
+  ]
+}
