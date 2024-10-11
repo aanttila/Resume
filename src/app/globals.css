@@ -18,6 +18,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  /* max-width: 390px; */
+}
+
+a {
+  color: theme("colors.slate.400");
+  text-decoration: underline;
 }
 
 @layer utilities {
