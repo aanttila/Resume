@@ -6,6 +6,12 @@ export default function Experience() {
   const experience = ResumeService.getExperience();
 
   if (experience.length > 0) {
+    const companyMap = new Map<string, boolean>();
+    for (const e of experience) {
+      const hasCompany = CompanyService.hasCompany(e.company);
+      companyMap.set(e.company, hasCompany);
+    }
+
     return (
       <div className="mt-2">
         <h2 className="font-bold text-xl text-sky-300">Experience</h2>
@@ -30,7 +36,7 @@ export default function Experience() {
                   <li key={index}>{d}</li>
                 )}
 
-                {CompanyService.hasCompany(e.company) && 
+                {companyMap.get(e.company) && 
                   <li><Link href={`/companies/${encodeURIComponent(e.company)}`}>See More</Link></li>
                 }
               </ul>
