@@ -3,13 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface IPageProps {
-  params: {
+  params: Promise<{
     name: string
-  }
+  }>
   // searchParams: {}
 }
 
-export default function Project({ params }: IPageProps) {
+export default async function Project(props: IPageProps) {
+  const params = await props.params;
   const name = decodeURIComponent(params.name);
   const company = CompanyService.getCompany(name);
 
