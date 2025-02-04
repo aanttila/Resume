@@ -1,7 +1,7 @@
-import { IDemographics } from "./IDemographics";
-import { IEducation } from "./IEducation";
-import { IExperience } from "./IExperience";
-import { IPlatform } from "./IPlatform";
+import type { IDemographics } from "./IDemographics";
+import type { IEducation } from "./IEducation";
+import type { IExperience } from "./IExperience";
+import type { IPlatform } from "./IPlatform";
 
 export interface IResume {
   demographics: IDemographics;

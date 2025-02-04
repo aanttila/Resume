@@ -22,6 +22,7 @@ export default async function Project(props: IPageProps) {
       <h2 className="font-extrabold text-2xl mb-4 text-sky-500">{company.name}</h2>
       
       {company.projects.length > 0 && company.projects.map((project, index) =>
+        // biome-ignore lint/suspicious/noArrayIndexKey: project has no id and is rarely changed
         <div key={index} className="mt-4 first-of-type:mt-0 space-y-4">
           <div className="border-b-sky-300 border-b-2">
             <h3 className="font-bold text-sky-300">{project.name}</h3>
@@ -35,6 +36,7 @@ export default async function Project(props: IPageProps) {
           }
 
           {project.platforms.length > 0 && project.platforms.map((platform, index) =>
+            // biome-ignore lint/suspicious/noArrayIndexKey: platform has no id and is rarely changed
             <div key={index}>
               <h3 className="font-medium">{platform.name}</h3>
               <p className="text-slate-400">{platform.services.join(", ")}</p>

@@ -1,4 +1,4 @@
-import { IPlatform } from "./IPlatform";
+import type { IPlatform } from "./IPlatform";
 
 export interface IProject {
   name: string;

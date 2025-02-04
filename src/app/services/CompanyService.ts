@@ -1,6 +1,6 @@
-import fs from "fs";
-import path from "path";
-import { ICompany } from "../models";
+import fs from "node:fs";
+import path from "node:path";
+import type { ICompany } from "../models";
 
 export default abstract class CompanyService {
   private static readonly companies = this.getCompanies();
@@ -8,12 +8,12 @@ export default abstract class CompanyService {
   private constructor() {}
 
   public static getCompany(name: string): ICompany | undefined {
-    const company = this.companies.find((c) => c.name === name);
+    const company = CompanyService.companies.find((c) => c.name === name);
     return company;
   }
 
   public static hasCompany(name: string): boolean {
-    const company = this.companies.find((c) => c.name === name);
+    const company = CompanyService.companies.find((c) => c.name === name);
     return !!company;
   }
 

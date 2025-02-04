@@ -9,6 +9,7 @@ export default function Education() {
         <h2 className="font-bold text-xl text-sky-300">Education</h2>
       
         {educations.map((e, index) =>
+          // biome-ignore lint/suspicious/noArrayIndexKey: education has no id and is rarely changed
           <div key={index} className="mt-4 first-of-type:mt-0 lg:grid lg:grid-cols-4 lg:gap-2">
             <div>
               <span className="font-semibold lg:font-normal">{e.major}</span>

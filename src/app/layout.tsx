@@ -1,7 +1,7 @@
-import ResumeService from "./services/ResumeService";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import ResumeService from "./services/ResumeService";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

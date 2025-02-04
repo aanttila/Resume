@@ -1,4 +1,4 @@
-import { IProject } from "./IProject";
+import type { IProject } from "./IProject";
 
 export interface ICompany {
   name: string;

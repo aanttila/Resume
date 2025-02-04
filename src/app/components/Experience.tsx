@@ -17,6 +17,7 @@ export default function Experience() {
         <h2 className="font-bold text-xl text-sky-300">Experience</h2>
 
         {experience.map((e, index) =>
+          // biome-ignore lint/suspicious/noArrayIndexKey: experience has no id and is rarely changed
           <div key={index} className="mt-4 first-of-type:mt-0">
             <div className="lg:grid lg:grid-cols-4 lg:gap-2 lg:font-semibold">
               <div className="font-semibold">{e.company}</div>
@@ -33,6 +34,7 @@ export default function Experience() {
             {e.duties.length > 0 &&
               <ul className="list-disc pl-5">
                 {e.duties.map((d, index) =>
+                  // biome-ignore lint/suspicious/noArrayIndexKey: duty has no ida and is rarely changed
                   <li key={index}>{d}</li>
                 )}
 

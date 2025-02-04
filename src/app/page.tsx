@@ -25,7 +25,7 @@ export default function Home() {
       
       <footer className="text-xs text-slate-400">
         Made with Next.js, React, Tailwind CSS, and TypeScript.
-        Hosted on <a href="https://www.vercel.com" target="_blank" className="underline">Vercel</a>.
+        Hosted on <a href="https://www.vercel.com" target="_blank" rel="noreferrer" className="underline">Vercel</a>.
       </footer>
     </div>
   );
