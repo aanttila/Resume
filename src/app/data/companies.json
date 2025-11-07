@@ -4,6 +4,25 @@
       "name": "Solera Health",
       "projects": [
         {
+          "name": "HALO",
+          "technologies": ["FHIR", "Node.js", "MongoDB"],
+          "platforms": [
+            { "name": "Google Cloud", "services": ["BigQuery", "Cloud Run", "Cloud Insights", "Google Healthcare (FHIR)", "Redis"] }
+          ],
+          "summary": [
+            "HALO is the next iteration of Solera's platform and product.",
+            "It is a re-envisioning of the existing Connect platform, expanding its capabilities and compatibility with current and future partners for helping patients find and participate in healthcare programs."
+          ],
+          "technicalOverview": [
+            "The HALO platform is written in TypeScript, Node.js, and React; it is hosted in Google Cloud and deployed via GitHub Actions and Terraform.",
+            "The code is organized into a monorepo to increase code reuse across UI, API, and other application hosting scenarios.",
+            "Patient and Care Plan related data is stored in Google Healthcare's FHIR stores, while configuration and other data is stored in PostgreSQL."
+          ],
+          "otherInformation": [
+            "This initiative is still underway, but we've seen significant improvements in developer productivity and quality as we've implemented better coding practices and improved unit/integration test coverage."
+          ]
+        },
+        {
           "name": "Connect",
           "technologies": ["Node.js", "MongoDB"],
           "platforms": [
