@@ -19,7 +19,7 @@
             "Patient and Care Plan related data is stored in Google Healthcare's FHIR stores, while configuration and other data is stored in PostgreSQL."
           ],
           "otherInformation": [
-            "This initiative is still underway, but we've seen significant improvements in developer productivity and quality as we've implemented better coding practices and improved unit/integration test coverage."
+            "The transition produced significant improvements in developer productivity and quality as we've implemented better coding practices and improved unit/integration test coverage."
           ]
         },
         {
@@ -40,11 +40,10 @@
             "Due to the time savings and rich features of Google Healthcare's FHIR APIs and data stores, our source of truth is Google Cloud&apso;s FHIR Healthcare repository, which is replicated to BigQuery for reporting and advanced querying."
           ],
           "otherInformation": [
-            "I am currently co-leading an effort to update our architecture and technologies.",
-            "While hosting in two different cloud providers is undesirable, the performance impact is nearly imperceptible, making any effort to consolidate cost-prohibitive at this time.",
-            "We are re-organizing our monolithic API, integration tests, and Azure Functions (timer and message triggers) into a set of “domain services”.",
+            "I co-lead an effort to update our architecture and technologies.",
+            "We re-organized our monolithic API, integration tests, and Azure Functions (timer and message triggers) into a set of 'domain services'.",
             "Each domain service is independently deployable and scalable, with improved cohesion, abstraction, modularity, and integration/unit testing.",
-            "We are also taking the opportunity to increase the use of TypeScript&apso;s strengths, isolate and unify data access, introduce exponential retries, and shift from Express to Azure HTTP Functions."
+            "We also took the opportunity to increase the use of TypeScript's strengths, isolate and unify data access, introduce exponential retries, and shift from Express to Azure HTTP Functions."
           ]
         }
       ]
