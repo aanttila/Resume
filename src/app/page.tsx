@@ -10,10 +10,8 @@ export default function Home() {
   return (
     <div className="font-[family-name:var(--font-geist-sans)] mx-4 md:mx-16 my-4 md:my-8">
       <main className="space-y-8">
-        <div>
-          <Demographics />
-          <Summary />
-        </div>
+        <Demographics />
+        <Summary />
         <Languages />
         <Platforms />
         <Technologies />

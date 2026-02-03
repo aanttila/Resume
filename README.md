@@ -13,7 +13,7 @@ This is an application designed to illustrate basic Next.js, React, Tailwind, an
 [X] Add deployments to Vercel  
 [ ] Add caching to ResumeService? This may not be necessary for prod builds  
 [X] Add "see more" to experience  
-[ ] Convert from a JSON file to a Postgres database?  
+[ ] Convert from a JSON file to a Postgres/SQLite database?  
 [ ] Pick different fonts?  
 [ ] Add a contact options, including demographics updates  
 

@@ -5,7 +5,10 @@ export default function Summary() {
 
   if (summary) {
     return (
-      <div className="mt-2">{summary}</div>
+      <div className="mt-2">
+        <h2 className="font-bold text-xl text-sky-300">Summary</h2>
+        <div>{summary}</div>
+      </div>
     );
   }
 }

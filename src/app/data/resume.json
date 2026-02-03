@@ -19,7 +19,7 @@
     "HTML",
     "JavaScript",
     "TypeScript",
-    "T-SQL",
+    "SQL",
     "JSON",
     "XML"
   ],
@@ -45,6 +45,7 @@
     "IIS",
     ".NET Core",
     "Node.js",
+    "NoSQL",
     "NuGet",
     "React",
     "SQL Server",
@@ -59,7 +60,10 @@
       "dates": "2022 - 2025",
       "location": "Johnson City, TN",
       "duties": [
-        "Key contributor to the architectural, technical, and business model overhaul of our core product offerings"
+        "Spearheaded the transition from a monolithic architecture to discrete domain services, accelerating delivery cycles and enhancing platform stability through strict type safety and expanded test suites",
+        "Supported a platform utilized by large insurance providers and employers that was made available to over 6.5M members",
+        "Consolidated cloud providers to reduce cost, latency, complexity, and transient faults",
+        "Developed coding standards for TypeScript and Node.js packages"
       ]
     },
     {
@@ -68,8 +72,10 @@
       "dates": "2017 - 2022",
       "location": "Nashville, TN",
       "duties": [
-        "Part of the small team responsible for expanding and migrating the notifications implementation to Azure (and eventually AWS, as we pivoted on cloud providers company-wide)",
-        "Key contributor to one of Paylocity's first fully native AWS applications written in Node.js"
+        "Directed and developed the cloud-native Notifications and Todos systems with support for multi-channel delivery and dynamic templating",
+        "Engineered core platform architecture serving 55 internal development teams, reliably handling 25M+ monthly requests",
+        "Co-owned the AWS migration when Paylocity pivoted on cloud providers company-wide",
+        "Architected and built one of the first native AWS applications written in Node.js"
       ]
     },
     {
@@ -79,8 +85,7 @@
       "location": "Nashville, TN",
       "duties": [
         "Collaborated with other technical leadership on the design and implementation of various feature enhancements and bug fixes for our applications and APIs",
-        "Assisted stakeholders in defining requirements while designing new features for a new application produced through a joint venture with one of MyHealthDirect's customers",
-        "Reviewed pull requests across projects and mentored other developers"
+        "Assisted stakeholders in defining requirements while designing new features for a new application produced through a joint venture with one of MyHealthDirect's customers"
       ]
     },
     {
@@ -89,9 +94,9 @@
       "dates": "2014 - 2015",
       "location": "Nashville, TN",
       "duties": [
-        "Worked with other senior technical staff to design, prove, and execute a cloud-based CQRS architecture for application development",
+        "Collaborated with senior technical staff from concept to completion of a cloud-based DDD+CQRS+ES architecture for application development",
         "Developed and supported the core internal NuGet packages used across project teams",
-        "Initiator and point of contact for the Microsoft Enterprise Agreement and Azure ISV enrollment"
+        "Point of contact for the Microsoft Enterprise Agreement and Azure ISV enrollment"
       ]
     },
     {
@@ -100,8 +105,8 @@
       "dates": "2013 - 2014",
       "location": "Nashville, TN",
       "duties": [
-        "Developed a responsive intranet site and its custom backing CMS for the franchise community",
-        "Redesigned the user interfaces for several sales reporting applications to improve user-friendliness and reduce help desk incidents"
+        "Developed the franchise community intranet site and its custom CMS in Ruby on Rails",
+        "Redesigned the user interfaces for several sales reporting applications to improve usability and decrease help desk incidents"
       ]
     },
     {
@@ -110,10 +115,8 @@
       "dates": "2012 - 2013",
       "location": "Nashville, TN",
       "duties": [
-        "Designed the front-end architecture and associated technologies for all enterprise applications",
-        "Assisted with the back-end architecture for all applications within the enterprise",
-        "Tested performance across franchise-facing services",
-        "Stabilized the existing code base in preparation for the new architecture and technology stack"
+        "Designed the architecture for all enterprise applications",
+        "Stabilized the existing code base in preparation for architecture and technology improvements"
       ]
     },
     {
@@ -122,9 +125,8 @@
       "dates": "2012",
       "location": "Nashville, TN",
       "duties": [
-        "Defined best practices for CSS, semantic HTML, and the 960 Grid System",
-        "Initiated and contributed to the design and refactor of portions of the application architecture",
-        "Performed code reviews and participated in pair programming sessions with team members"
+        "Defined best practices for CSS, semantic HTML, and the 960 Grid System for 11 teams",
+        "Initiated and contributed to the design and refactor of portions of the application architecture"
       ]
     },
     {
@@ -133,15 +135,7 @@
       "dates": "2006 - 2012",
       "location": "Richmond, CA",
       "duties": [
-        "Team lead for the Hewlett Packard MagCloud 3.0 iPad application",
-        "Senior developer on the globally distributed Hewlett Packard MagCloud web application team",
-        "Team lead for the PDC 09 and Channel 9 smooth streaming video players",
-        "Designed and constructed the majority of the Microsoft SPLA Essentials application",
-        "Responsible for the data architecture, installation experience, and Twitter integration for the CBS Presidential Inauguration player",
-        "Designed and implemented the data architecture for the Democratic National Committee Convention Experience",
-        "Lead developer for two of Microsoft's Windows Marketplace upgrades",
-        "Core contributor to Vertigo's website redesign",
-        "Designed and implemented a custom ASP.NET Membership provider for a commercial CRM"
+        "Rotated between lead and contributor roles as required for a variety of successful and high-profile client engagements including Autodesk, Microsoft, Hewlett Packard, and CBS"
       ]
     },
     {
@@ -159,10 +153,9 @@
       "dates": "2001 - 2006",
       "location": "Nashville, TN",
       "duties": [
-        "Technical lead for several financial and regulatory applications",
-        "Developed and presented technical guidance for internal use",
-        "Member of a research team evaluating Java and its methodologies",
-        "Participated in the maintenance and feature development of the system used to create and modify websites for all HCA facilities"
+        "Lead and contributed to public and internal applications",
+        "Evaluated Java as a viable technology by participating in the development of a pilot application",
+        "Developed and presented best practices for .NET"
       ]
     },
     {
@@ -171,7 +164,7 @@
       "dates": "2001",
       "location": "Memphis, TN",
       "duties": [
-        "Designed, implemented, and deployed an internal job application system for the local county government"
+        "Built and launched an internal job application system for the local county government"
       ]
     },
     {
@@ -180,9 +173,8 @@
       "dates": "1999 - 2001",
       "location": "Memphis, TN",
       "duties": [
-        "Technical lead for several consulting engagements",
-        "Taught several classes for the MCSD track",
-        "Developed coding standards and best practices documentation"
+        "Technical lead for consulting projects and developed coding standards and best practices",
+        "Professional instructor for Microsoft developer certification classes"
       ]
     },
     {
@@ -191,8 +183,7 @@
       "dates": "1998 - 1999",
       "location": "Memphis, TN",
       "duties": [
-        "Responsible for the maintenance and future development of the company's touch-screen desktop application",
-        "Assisted with the creation of scheduling components for conferences and their user interface integration"
+        "Responsible for the touch-screen desktop application and serial interfaces of several devices"
       ]
     }
   ],
